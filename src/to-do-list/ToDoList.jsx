@@ -4,8 +4,8 @@ import ToDo from "./ToDo";
 export default function ToDoList() {
   return (
     <ul>
-      <ToDo text="Learn HTML" isCompleted={true} />
-      <ToDo text="Learn CSS" isCompleted={true} />
+      <ToDo text="Learn HTML" isCompleted={true} isDeleted />
+      <ToDo text="Learn CSS" isCompleted={true} isDeleted />
       <ToDo text="Learn JavaScript" isCompleted={true} />
       <ToDo text="Learn React" isCompleted={true} />
       <ToDo text="Learn Redux" isCompleted={false} />
