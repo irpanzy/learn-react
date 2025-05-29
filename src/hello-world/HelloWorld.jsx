@@ -10,9 +10,20 @@ export default function HelloWorld() {
 }
 
 function HeaderHelloWorld() {
-  return <h1>Hello World</h1>;
+  const text = "Hello World";
+  return (
+    <h1 style={{ color: "red", backgroundColor: "black" }}>
+      {text.toUpperCase()}
+    </h1>
+  );
 }
 
 function ParagraphHelloWorld() {
-  return <p>Welcome to ReactJS with Vite</p>;
+  const text = "Welcome to ReactJS with Vite";
+  const style = {
+    color: "yellow",
+    backgroundColor: "black",
+  };
+
+  return <p style={style}>{text.toLowerCase()}</p>;
 }
