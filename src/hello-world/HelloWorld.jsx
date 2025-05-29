@@ -1,29 +1,25 @@
 import React from "react";
+import "./HelloWorld.css";
 
 export default function HelloWorld() {
+  const props = {
+    text: "Hello World from Spread Syntax",
+  };
+
   return (
     <div>
-      <HeaderHelloWorld />
+      <HeaderHelloWorld {...props} />
       <ParagraphHelloWorld />
     </div>
   );
 }
 
-function HeaderHelloWorld() {
-  const text = "Hello World";
-  return (
-    <h1 style={{ color: "red", backgroundColor: "black" }}>
-      {text.toUpperCase()}
-    </h1>
-  );
+function HeaderHelloWorld({ text = "Ups, lupa kasih teks" }) {
+  return <h1 className="title">{text.toUpperCase()}</h1>;
 }
 
 function ParagraphHelloWorld() {
   const text = "Welcome to ReactJS with Vite";
-  const style = {
-    color: "yellow",
-    backgroundColor: "black",
-  };
 
-  return <p style={style}>{text.toLowerCase()}</p>;
+  return <p className="content"> {text.toLowerCase()}</p>;
 }
