@@ -2,11 +2,12 @@ import { createRoot } from "react-dom/client";
 import HelloWorld from "./HelloWorld";
 import { StrictMode } from "react";
 import Container from "./Container";
-import ToDo from "../to-do-list/ToDo";
 import ToDoList from "../to-do-list/ToDoList";
 import Table from "../table/Table";
 import AlertButton from "../button/AlertButton";
 import MyButton from "../button/MyButton";
+import Toolbar from "../button/Toolbar";
+import SearchForm from "../form/SearchForm";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,7 +16,17 @@ createRoot(document.getElementById("root")).render(
       <ToDoList />
       <Table />
       <AlertButton text="Click Gw" message="Ups, lupa kasih teks" />
-      <MyButton text="Smash gw" onSmash={() => alert("Smash, lupa kasih teks")} />
+      <MyButton
+        text="Smash gw"
+        onSmash={() => alert("Smash, lupa kasih teks")}
+      />
+      <Toolbar
+        onClick={(e) => {
+          e.stopPropagation();
+          alert("Toolbar clicked");
+        }}
+      />
+      <SearchForm />
     </Container>
   </StrictMode>
 );
