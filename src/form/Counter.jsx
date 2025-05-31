@@ -3,12 +3,14 @@ import React, { useState } from "react";
 export default function Counter() {
   let [counter, setCounter] = useState(0);
 
-  console.log("render counter");
+  console.log(`render counter ${counter}`);
   return (
     <div>
       <button
         onClick={() => {
-          setCounter(counter + 5);
+          setCounter((c) => c + 5);
+          setCounter((c) => c + 5);
+          setCounter((c) => c + 5);
           console.log(counter);
         }}
       >
