@@ -16,6 +16,7 @@ export default defineConfig({
         profile: "profile.html",
         timer: "timer.html",
         guest_book: "guest-book.html",
+        product: "product.html",
       },
     },
   },
