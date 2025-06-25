@@ -15,11 +15,14 @@ export default function ProductList() {
   }, []);
 
   useEffect(() => {
-    console.log("Product List Component Mounted");
+    async function fetchProducts() {
+      const response = await fetch("/products.json");
+      const data = await response.json();
+      setProducts(data);
+    }
+    console.log("Loading products");
     if (load) {
-      fetch("/products.json")
-        .then((res) => res.json())
-        .then((products) => setProducts(products));
+      fetchProducts();
     }
   }, [load]);
 
